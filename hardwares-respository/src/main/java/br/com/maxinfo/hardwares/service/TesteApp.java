@@ -22,8 +22,8 @@ public class TesteApp {
 		
 		a.setAtivado(true);
 		a.setUsername("root");
-		a.setEmail("maxinfoti@gmail.com");
-		a.setSenha("root");
+		a.setEmail("root@maxinfoti.com");
+		a.setPassword("root");
 		a.setDataCadastro(new Date());
 		a.setUltimoAcesso(new Date());
 		
@@ -32,7 +32,7 @@ public class TesteApp {
 		
 		aut.setUsuario(a);
 		aut.setUsuario(a);
-		aut.setTipoAutorizacao("ROLE_USER");
+		aut.setTipoAutorizacao("ROLE_ADMIN");
 //		aut2.setTipoAutorizacao("ROLE_USER_PJ");
 		
 		List<Autorizacao> autorites  = new LinkedList<Autorizacao>();

@@ -23,7 +23,7 @@ public class Usuario extends Persistivel implements Serializable {
 	
 	private String email;
 
-	private String senha; 	
+	private String password; 	
 	
 	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER,mappedBy="usuario")
 	private  List<Autorizacao> autorizacoes;
@@ -52,15 +52,7 @@ public class Usuario extends Persistivel implements Serializable {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-
+	
 	public Date getDataCadastro() {
 		return dataCadastro;
 	}
@@ -91,6 +83,14 @@ public class Usuario extends Persistivel implements Serializable {
 
 	public void setAutorizacoes(List<Autorizacao> autorizacoes) {
 		this.autorizacoes = autorizacoes;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Promocões</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</head>
+<body> 
+
+<div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+  <div class="modal-content">
+      <div class="modal-header">          
+          <h1 class="text-center">Login</h1>
+      </div>
+      <div class="modal-body">
+          <form action="#"  class="form col-md-12 center-block"  method="post" >
+            <div class="form-group">
+              <input type="text" class="form-control input-lg" placeholder="Email" />
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control input-lg" placeholder="Senha"  />
+            </div>
+            <div class="form-group">	
+              <button type="submit" id="aaa" name="aaa" class="btn btn-primary btn-lg btn-block">Entrar</button>
+              <span class="pull-right"><a href="#">Cadastre-se!</a></span><span><a href="#">Ajuda?</a></span>
+            </div>
+          </form>
+      <//div>
+      <div class="modal-footer">
+          <div class="col-md-12">   
+          	<h3 class="text-center">Aqui suas compras valem mais</h3>      
+		  </div>	
+      </div>
+  </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+    
+});
+</script>
+
+</body>
+</html>
