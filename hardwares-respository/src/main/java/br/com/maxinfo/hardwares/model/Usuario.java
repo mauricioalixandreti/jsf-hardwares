@@ -8,6 +8,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -27,7 +29,7 @@ public class Usuario extends Persistivel implements Serializable {
 	
 	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER,mappedBy="usuario")
 	private  List<Autorizacao> autorizacoes;
-
+	
 	@Column(name = "data_cadastro")
 	private Date dataCadastro;
 
@@ -35,6 +37,10 @@ public class Usuario extends Persistivel implements Serializable {
 	private Date ultimoAcesso;
 
 	private Boolean ativado;
+	
+	@JoinColumn(name = "empresa_id", referencedColumnName = "id")
+    @ManyToOne(optional = false)
+	private Empresa empresa;
 	
 
 	public String getUsername() {
@@ -93,6 +99,16 @@ public class Usuario extends Persistivel implements Serializable {
 		this.password = password;
 	}
 
+	public Empresa getEmpresa() {
+		return empresa;
+	}
+
+	public void setEmpresa(Empresa empresa) {
+		this.empresa = empresa;
+	}
+
+	
+    
 	
 	
 	

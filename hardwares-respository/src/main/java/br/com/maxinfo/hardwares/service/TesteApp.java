@@ -8,7 +8,13 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import br.com.maxinfo.hardwares.model.Autorizacao;
+import br.com.maxinfo.hardwares.model.Cliente;
+import br.com.maxinfo.hardwares.model.Empresa;
+import br.com.maxinfo.hardwares.model.Servico;
 import br.com.maxinfo.hardwares.model.Usuario;
+import br.com.maxinfo.hardwares.repository.ClienteRepository;
+import br.com.maxinfo.hardwares.repository.EmpresaRepository;
+import br.com.maxinfo.hardwares.repository.ServicoRepository;
 
 public class TesteApp {
 
@@ -17,32 +23,60 @@ public class TesteApp {
 		
 		ApplicationContext context = new 	ClassPathXmlApplicationContext(new String []{"repository-context.xml"});
 		UsuarioService userService  = context.getBean(UsuarioService.class);
+		EmpresaRepository empresaRepository = context.getBean(EmpresaRepository.class);
+		ServicoRepository servicoRepository = context.getBean(ServicoRepository.class);
+		ClienteRepository clienteRepository  = context.getBean(ClienteRepository.class);
 		
-		Usuario a = new Usuario();
+		Empresa empresa = new Empresa();
+		empresa.setCnpj("00000000000000");
+		empresa.setEmail("maxinfoti@gmail.com");
+		empresa.setNomeEmpresa("maxinfoTI");
+		empresa.setStatusServico(true);
 		
-		a.setAtivado(true);
-		a.setUsername("root");
-		a.setEmail("root@maxinfoti.com");
-		a.setPassword("root");
-		a.setDataCadastro(new Date());
-		a.setUltimoAcesso(new Date());
+		empresaRepository.saveAndFlush(empresa);
+		System.out.println("Empresa Salva");
+		
+		Usuario usuario = new Usuario();
+		
+		usuario.setAtivado(true);
+		usuario.setUsername("admin");
+		usuario.setEmail("admint@maxinfoti.com");
+		usuario.setPassword("admin");
+		usuario.setDataCadastro(new Date());
+		usuario.setUltimoAcesso(new Date());
 		
 		Autorizacao aut = new Autorizacao();
-		Autorizacao aut2 = new Autorizacao();
 		
-		aut.setUsuario(a);
-		aut.setUsuario(a);
+		
+		aut.setUsuario(usuario);
+		aut.setUsuario(usuario);
 		aut.setTipoAutorizacao("ROLE_ADMIN");
 //		aut2.setTipoAutorizacao("ROLE_USER_PJ");
 		
 		List<Autorizacao> autorites  = new LinkedList<Autorizacao>();
 		autorites.add(aut);
 //		autorites.add(aut2);
-		a.setAutorizacoes(autorites);
+		usuario.setAutorizacoes(autorites);	
 		
-				
+		usuario.setEmpresa(empresa);
+		
 		System.out.println("SALVANDO USUARIO");
-		userService.saveAndUpdate(a);
+		userService.saveAndUpdate(usuario);
+		
+		Cliente cliente = new Cliente ();
+		cliente.setNomeCompleto("mauricio alixandre");
+		cliente.setCelular("8888888888");
+		clienteRepository.saveAndFlush(cliente);
+		
+		System.out.println("SALVANDO CLIENTE E SERVICO");
+		Servico servico = new Servico();
+		servico.setNomeServico("teste JPA");
+		
+		servico.setEmpresa(empresa);
+		
+		servico.getCliente().add(cliente);
+		servicoRepository.saveAndFlush(servico);
+		
 		
 	}
 
