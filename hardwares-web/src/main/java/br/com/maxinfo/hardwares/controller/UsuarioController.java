@@ -13,12 +13,10 @@ import org.springframework.stereotype.Component;
 import br.com.maxinfo.hardwares.model.Usuario;
 import br.com.maxinfo.hardwares.sercurity.SecurityUser;
 
-//
-//@Component()
-//@Scope("session")
-//@PreAuthorize("isFullyAuthenticated()")
-@ManagedBean
-@SessionScoped
+
+@Component()
+@Scope("session")
+@PreAuthorize("isFullyAuthenticated()")
 public class UsuarioController {
 	
 	private SecurityUser usuario;

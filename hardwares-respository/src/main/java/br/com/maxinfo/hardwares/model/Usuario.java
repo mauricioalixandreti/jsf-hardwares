@@ -2,6 +2,7 @@ package br.com.maxinfo.hardwares.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -25,10 +26,12 @@ public class Usuario extends Persistivel implements Serializable {
 	
 	private String email;
 
-	private String password; 	
+	private String password;
+	
+	private String nome;
 	
 	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER,mappedBy="usuario")
-	private  List<Autorizacao> autorizacoes;
+	private  List<Autorizacao> autorizacoes = new LinkedList<Autorizacao>();
 	
 	@Column(name = "data_cadastro")
 	private Date dataCadastro;
@@ -105,6 +108,14 @@ public class Usuario extends Persistivel implements Serializable {
 
 	public void setEmpresa(Empresa empresa) {
 		this.empresa = empresa;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNomeUsuario(String nomeUsuario) {
+		this.nome = nomeUsuario;
 	}
 
 	

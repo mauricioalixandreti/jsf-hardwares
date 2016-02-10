@@ -23,8 +23,7 @@ import br.com.maxinfo.hardwares.repository.Persistivel;
 @Entity
 @Table(name = "cliente")
 public class Cliente extends Persistivel implements Serializable {
-    private static final long serialVersionUID = 1L;
-   
+    private static final long serialVersionUID = 1L;   
   
     private String email;    
    
@@ -42,7 +41,7 @@ public class Cliente extends Persistivel implements Serializable {
     @Column(name = "numero_rua")
     private Integer numeroRua;
     
-    @Column(name = "data_aniversário")
+    @Column(name = "data_aniversario")
     @Temporal(TemporalType.DATE)
     private Date dataAniversario;    
     
@@ -124,8 +123,5 @@ public class Cliente extends Persistivel implements Serializable {
 	public void setDataCadastro(Date dataCadastro) {
 		this.dataCadastro = dataCadastro;
 	}   
-
-    
-
    
 }

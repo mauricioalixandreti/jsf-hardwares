@@ -24,9 +24,93 @@
 		<link href="resources/css/owl.theme.default.min.css"  rel="stylesheet"></link>
 		<link href="resources/css/style.css" rel="stylesheet"></link>
 	</head>
-<body> 
+<body style="background-color: #333231">
+
+	 
 		
-		<ui:include src="/public/index.xhtml" />
+   <div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+  <div class="modal-content">
+      <div class="modal-header">          
+          <h1 class="text-center">Cadastre sua Empresa</h1>
+      </div>
+      <div class="modal-body">
+          <h:form id="formCadEmpresa" class="form col-md-12 center-block"  >
+			<p:dialog rendered="#{param.error}" visible="true" modal="true" >
+		<div class="alert alert-danger">
+			<strong>Danger!</strong> Indicates a dangerous or potentially
+			negative action.
+		</div>
+	</p:dialog>
+          	    
+            <div class="form-group">
+              * Nome da Empresa
+              <h:inputText id="nome-empresa" value="#{empresaController.empresa.nomeEmpresa}"
+               required="true" requiredMessage="Informe o nome da empresa!"
+               class="form-control input-lg" placeholder="Nome da Empresa" />               
+               <p:message  stlyle="color:red;"  for="nome-empresa" />  					
+				 
+            </div> 
+            <div class="form-group">
+              Responsável
+              <h:inputText id="responsavle" value="#{empresaController.empresa.responsavel}" 
+              required="true" requiredMessage="Informe o nome do responsável!"
+              class="form-control input-lg" placeholder="Responsável" />
+              <p:message  stlyle="color:red;"  for="responsavle" /> 
+            </div>
+            <div class="form-group">
+              CNPJ	
+              <h:inputText id="cnpj" value="#{empresaController.empresa.cnpj}" class="form-control input-lg"              
+              placeholder="CNPJ"
+              required="true" requiredMessage="Caso não possua cnpj, informe apenas zero (00000000000000)" />
+              <p:message  stlyle="color:red;"  for="cnpj" /> 
+            </div>
+            <div class="form-group">
+              E-mail da empresa
+              <h:inputText id="email-empresa" value="#{empresaController.empresa.email}"
+               class="form-control input-lg" placeholder="E-mail" 
+               required="true" requiredMessage="O email é obrigatório" />
+              <p:message  stlyle="color:red;"  for="email-empresa" />
+            </div>
+            <div class="form-group">
+              Celular
+              <h:inputText id="celular" value="#{empresaController.empresa.celular}"
+               class="form-control input-lg" placeholder="Celular" 
+               required="true" requiredMessage="O celular é obrigatório" />
+              <p:message  stlyle="color:red;"  for="celular" />
+            </div>
+            <div class="form-group">
+              Nome do usuário
+              <h:inputText id="usuario"  requiredMessage="Nome do usuário"               
+               value="#{empresaController.empresa.usuario}" class="form-control input-lg"
+                required="true"  />
+              <p:message  stlyle="color:red;"  for="usuario" />
+            </div>
+            <div class="form-group">
+              Senha de acesso
+              <h:inputSecret id="senha" class="form-control input-lg" placeholder="Senha" 
+              required="true" requiredMessage="O celular é obrigatório" />
+              <p:message  stlyle="color:red;"  for="senha" />
+            </div>
+            <div class="form-group">
+            	<div align="right">	
+              <h:commandButton id="btn-cadstro-empresa" action="#{empresaController.cadastrarEmpresa}"
+              	 value="Cadastrar"	class="btn btn-primary btn-lg"  >
+              	 <p:ajax update="formCadEmpresa" ></p:ajax>              	 	
+              </h:commandButton>   
+              </div>           
+            </div>
+          </h:form>
+      </div>
+      <div class="modal-footer">
+          <div class="col-md-12">   
+          	<p class="text-center alert alert-success">Você poderá  usar o sistema gratuitamente durante um mês. Aproveite!</p>      
+		  </div>	
+      </div>
+  </div>
+  </div>
+</div>
+
 
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
 <!-- 		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script> -->

@@ -8,8 +8,9 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
         http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
+	
 	<context:annotation-config />
-	<context:component-scan base-package="br.com.maxinfo.hardwares" />
+	<context:component-scan base-package="br.com.maxinfo.hardwares*" />
 	<context:property-placeholder location="classpath:jpa.properties" />
 
 	

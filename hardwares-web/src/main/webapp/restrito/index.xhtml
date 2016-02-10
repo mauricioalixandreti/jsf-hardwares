@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"		
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 	<head>
 		<meta charset="utf-8"></meta>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" ></meta>
@@ -11,7 +12,8 @@
 		<meta name="description" content=""></meta>
 		<meta name="author" content=""></meta>
 		<link rel="icon" href="favicon.ico"></link>
-		<title>Sanza - Onepage Multipurpose Bootstrap HTML by MOOZThemes.com</title>
+		<link rel="icon" href="favicon.ico"></link>
+		<title>HardwaresWeb</title>
 		<!-- Bootstrap core CSS -->
 		<link href="../resources/css/bootstrap.min.css" rel="stylesheet"></link>
 		<link rel="stylesheet" href="../resources/css/tema-promocoes.css"></link>
@@ -20,14 +22,14 @@
 		<link href="../resources/css/owl.theme.default.min.css"  rel="stylesheet"></link>
 		<link href="../resources/css/style.css" rel="stylesheet"></link>
 	</head>
-	<body id="page-top">
+	<body id="page-top">		
 		<!-- Navigation -->
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="container">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header page-scroll">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span>
+					<span class="sr-only">Menu navegação</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -48,12 +50,15 @@
 						</li>
 						<li>
 							<a class="page-scroll" href="#portfolio">Ordens de Serviços</a>
+						</li>						
+						<li>							
+							<h:outputLink value="#{facesContext.externalContext.requestContextPath}/j_spring_security_logout">
+								 <h:outputText value="Sair"/>
+							</h:outputLink>
+<!-- 							<a  href="#{facesContext.externalContext.requestContextPath}/j_spring_security_logout}">Sair</a> -->
 						</li>
 						<li>
-							<a class="page-scroll" href="#team">Notificações</a>
-						</li>
-						<li>
-							<a  href="#{facesContext.externalContext.requestContextPath}/j_spring_security_logout}">Sair</a>
+							<a class="page-scroll" href="#">#{usuarioController.usuario.nome}</a>
 						</li>
 					</ul>
 				</div>
@@ -66,9 +71,9 @@
 			<div class="container">
 				<div class="slider-container">
 					<div class="intro-text">
-						<div class="intro-lead-in">Welcome To MOOZ Themes!</div>
-						<div class="intro-heading">YOUR FAVORITE SOURCE OF FREE BOOTSTRAP THEMES</div>
-						<a href="#about" class="page-scroll btn btn-xl">Tell Me More</a>
+						<div class="intro-lead-in">Bem-vindo!</div>
+						<div class="intro-heading">#{usuarioController.usuario.empresa.nomeEmpresa}</div>
+						<a href="#about" class="page-scroll btn btn-xl">Novo Cliente</a>
 					</div>
 				</div>
 			</div>
@@ -78,8 +83,8 @@
 				<div class="row">
 					<div class="col-lg-12 text-center">
 						<div class="section-title">
-							<h2>ABOUT</h2>
-							<p>A creative agency based on Candy Land, ready to boost your business with some beautifull templates. MOOZ Agency is one of the best in town see more you will be amazed.</p>
+							<h2>Meus Clientes</h2>
+<!-- 							<p> </p> -->
 						</div>
 					</div>
 				</div>
@@ -88,8 +93,7 @@
 					<div class="col-md-3 text-center">
 						<div class="mz-module-about">
 							<i class="fa fa-briefcase ot-circle"></i>
-							<h3>Web Development</h3>
-							<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+							<a href="#" data-toggle="modal" data-target="#Modal-novo-cliente"><h3>Cadastro</h3></a>							
 						</div>
 					</div>
 					<!-- end about module -->
@@ -97,8 +101,7 @@
 					<div class="col-md-3 text-center">
 						<div class="mz-module-about">
 							<i class="fa fa-photo ot-circle"></i>
-							<h3>Visualisation</h3>
-							<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
+							<h3>Enviar Sms</h3>							
 						</div>
 					</div>
 					<!-- end about module -->
@@ -106,8 +109,7 @@
 					<div class="col-md-3 text-center">
 						<div class="mz-module-about">
 							<i class="fa fa-camera-retro ot-circle"></i>
-							<h3>Photography</h3>
-							<p>Accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+							<h3>Inserir</h3>							
 						</div>
 					</div>
 					<!-- end about module -->
@@ -115,8 +117,7 @@
 					<div class="col-md-3 text-center">
 						<div class="mz-module-about">
 							<i class="fa fa-cube ot-circle"></i>
-							<h3>UI/UX Design</h3>
-							<p> Itaque earum rerum hic tenetur a sapiente, ut aut reiciendis maiores</p>
+							<h3>Uss</h3>							
 						</div>
 					</div>
 					<!-- end about module -->
@@ -464,20 +465,46 @@
 		</footer>
 
 		<!-- Modal for portfolio item 1 -->
-		<div class="modal fade" id="Modal-1" tabindex="-1" role="dialog" aria-labelledby="Modal-label-1">
+		<div class="modal fade" id="Modal-novo-cliente" tabindex="-1" role="dialog" aria-labelledby="Modal-label-1">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">times;</span></button>
-						<h4 class="modal-title" id="Modal-label-1">Dean  Letter</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
+						<h4 class="modal-title" id="Modal-label-1">Novo Cliente</h4>
 					</div>
-					<div class="modal-body">
-						<img src="images/demo/portfolio-1.jpg" alt="img01" class="img-responsive" ></img>
-						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
-						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
+					<div class="modal-body">						
+						<h:form id="formCad" style="margin-left:20px;">
+							<h:panelGrid  columns="2" width="500">								
+								<h:outputLabel for="nome" >* Nome do Cliente:</h:outputLabel>
+								<h:inputText  id="nome" class="form-control input-lg" value="#{clienteController.current.nomeCompleto}"/>
+								<h:outputLabel for="celular">* Celular:</h:outputLabel>
+								<p:inputMask  value="#{clienteController.current.celular}" id="celular" >									
+								</p:inputMask>
+								<h:outputLabel for="email" >E-mail:</h:outputLabel>
+								<h:inputText id="email"  value="#{clienteController.current.email}" class="form-control input-lg"></h:inputText>								
+								<h:outputLabel for="cidade">Cidade:</h:outputLabel>
+								<h:inputText id="cidade" class="form-control input-lg"></h:inputText>
+								<h:outputLabel for="cep">CEP:</h:outputLabel>
+								<h:inputText id="cep" class="form-control input-lg"></h:inputText>
+								<h:outputLabel for="rua">Rua:</h:outputLabel>
+								<h:inputText id="rua" class="form-control input-lg"></h:inputText>
+								<h:outputLabel for="numero">Numero:</h:outputLabel>
+								<h:inputText id="numero" class="form-control input-lg"></h:inputText>
+								<br/>					
+								<f:facet name="footer">
+									<div align="right" >
+										<h:commandButton  value="Salvar" />
+									</div>
+								</f:facet>
+							</h:panelGrid>
+						</h:form>						
+<!-- 						<img src="../resources/images/demo/portfolio-1.jpg" alt="img01" class="img-responsive" ></img> -->
+<!-- 						<div class="modal-works"><span>Branding</span><span>Web Design</span></div> -->
+							
 					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<div class="modal-footer" align="left">
+						<h:outputLabel style="color:black;font-weight: 3px;">Em breve!<br/>Você poderá comprar créditos Web Sms e informar seus clientes sobre promoções!
+								<br/>Sua empresa inovando a cada dia.</h:outputLabel>
 					</div>
 				</div>
 			</div>
@@ -574,5 +601,6 @@
 		<script src="../resources/js/jquery.appear.js"></script>
 		<script src="../resources/js/SmoothScroll.min.js"></script>
 		<script src="../resources/js/mooz.themes.scripts.js"></script>
+		<script src="../resources/js/config.js"></script>
 	</body>
 </html>

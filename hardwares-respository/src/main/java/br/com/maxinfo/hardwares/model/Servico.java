@@ -1,6 +1,7 @@
 package br.com.maxinfo.hardwares.model;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Date;
 import java.util.LinkedList;
@@ -15,6 +16,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.swing.text.StyledEditorKit.BoldAction;
 
 import br.com.maxinfo.hardwares.repository.Persistivel;
 
@@ -28,10 +30,11 @@ public class Servico extends Persistivel implements Serializable {
   
 	private static final long serialVersionUID = 1L;
    
-    @Column(name = "codigo")
+    @Column(name = "codigo",unique=true)
     private String codigo;
     
-    private int status;    
+    @Column(name="servico_finalizado")
+    private Boolean status;    
     
     @Column(name = "observacao")
     private String observacao;    
@@ -46,11 +49,12 @@ public class Servico extends Persistivel implements Serializable {
     @Column(name = "nome_servico")
     private String nomeServico;
     
+    @Column(name="servico_pago")
     private Boolean pago;
     
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
   
-    private BigInteger valor;
+    private BigDecimal valor;
     
     @Column(name = "data_entrega_prevista")
     @Temporal(TemporalType.DATE)
@@ -80,11 +84,11 @@ public class Servico extends Persistivel implements Serializable {
 		this.codigo = codigo;
 	}
 
-	public int getStatus() {
+	public Boolean getStatus() {
 		return status;
 	}
 
-	public void setStatus(int status) {
+	public void setStatus(Boolean status) {
 		this.status = status;
 	}
 
@@ -128,11 +132,11 @@ public class Servico extends Persistivel implements Serializable {
 		this.pago = pago;
 	}
 
-	public BigInteger getValor() {
+	public BigDecimal getValor() {
 		return valor;
 	}
 
-	public void setValor(BigInteger valor) {
+	public void setValor(BigDecimal valor) {
 		this.valor = valor;
 	}
 
