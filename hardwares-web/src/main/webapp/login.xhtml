@@ -39,7 +39,7 @@
       <div class="modal-body">
           <form action="j_spring_security_check" method="post"  class="form col-md-12 center-block" >
             <div class="form-group">
-              <input type="text" class="form-control input-lg" name="j_username" placeholder="E-mail" />
+              <input type="text" class="form-control input-lg" name="j_username" placeholder="Username" />
             </div>
             <div class="form-group">
               <input type="password" class="form-control input-lg" name="j_password" placeholder="Senha"  />
@@ -54,7 +54,7 @@
       <div class="modal-footer">
           <div class="col-md-12">  
           	<h:outputLabel style="color:red;" rendered="#{param.erro}">Login ou senha invalida!</h:outputLabel>          	
-          	<h:outputLink style="margin-left:100px" value="cadastro.xhtml" >Cadastre-se!</h:outputLink>          	      
+          	<h3><h:outputLink style="margin-left:100px" value="cadastro.xhtml" >Cadastre-se!</h:outputLink></h3>          	      
 		  </div>	
       </div>
   </div>

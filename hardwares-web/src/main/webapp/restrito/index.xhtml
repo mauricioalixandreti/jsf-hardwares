@@ -46,10 +46,10 @@
 							<a class="page-scroll" href="#about">Clientes</a>
 						</li>
 						<li>
-							<a class="page-scroll" href="#services">Usuarios</a>
+							<a class="page-scroll" href="#usuarios">Usuarios</a>
 						</li>
 						<li>
-							<a class="page-scroll" href="#portfolio">Ordens de Serviços</a>
+							<a class="page-scroll" href="#ordemservico">Ordens de Serviços</a>
 						</li>						
 						<li>							
 							<h:outputLink value="#{facesContext.externalContext.requestContextPath}/j_spring_security_logout">
@@ -125,7 +125,17 @@
 			</div>
 			<!-- /.container -->
 		</section>
-		<section class="light-bg">
+		<section id="usuarios" class="light-bg">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<div class="section-title">
+							<h2>Usuários do sistema</h2>
+<!-- 							<p> </p> -->
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-7">
@@ -144,7 +154,7 @@
 
 						<div class="owl-portfolio owl-carousel">
 							<div class="item">
-								<div class="owl-portfolio-item"><img src="images/demo/portfolio-7.jpg" class="img-responsive" alt="portfolio"></img></div>
+								<div class="owl-portfolio-item"><img src="../resources/images/demo/portfolio-7.jpg" class="img-responsive" alt="portfolio"></img></div>
 							</div>
 							<div class="item">
 								<div class="owl-portfolio-item"><img src="images/demo/portfolio-8.jpg" class="img-responsive" alt="portfolio"></img></div>
@@ -159,239 +169,86 @@
 			</div>
 		</section>
 
-		<section id="portfolio">
+		<section id="ordemservico">
 			<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">
 					<div class="section-title">
-						<h2>Portfolio</h2>
-						<p>Our portfolio is the best way to show our work, you can see here a big range of our work. Check them all and you will find what you are looking for.</p>
+						<h2>Ordem de Serviço</h2>
+						<p>Neste seção é possivel visualizar o status de uma OS e adicionar novas ocorrencias</p>
 					</div>
 				</div>
 			</div>
-			<div class="row row-0-gutter">
-				<!-- start portfolio item -->
-				<div class="col-md-4 col-0-gutter">
-					<div class="ot-portfolio-item">
-						<figure class="effect-bubba">
-							<img src="images/demo/portfolio-1.jpg" alt="img02" class="img-responsive" ></img>
-							<figcaption>
-								<h2>Dean  Letter</h2>
-								<p>Branding, Design</p>
-								<a href="#" data-toggle="modal" data-target="#Modal-1">View more</a>
-							</figcaption>
-						</figure>
+			<div class="row">
+					<!-- about module -->
+					<div class="col-md-3 text-center">
+						<div class="mz-module-about">
+							<i class="fa fa-briefcase ot-circle"></i>
+							<a href="#" data-toggle="modal" data-target="#Modal-nova-os"><h3>Nova OS</h3></a>							
+						</div>
 					</div>
-				</div>
-				<!-- end portfolio item -->
-				<!-- start portfolio item -->
-				<div class="col-md-4 col-0-gutter">
-					<div class="ot-portfolio-item">
-						<figure class="effect-bubba">
-							<img src="images/demo/portfolio-2.jpg" alt="img02" class="img-responsive"></img>
-							<figcaption>
-								<h2>Startup Framework</h2>
-								<p>Branding, Web Design</p>
-								<a href="#" data-toggle="modal" data-target="#Modal-2">View more</a>
-							</figcaption>
-						</figure>
+					<!-- end about module -->
+					<!-- about module -->
+					<div class="col-md-3 text-center">
+						<div class="mz-module-about">
+							<i class="fa fa-photo ot-circle"></i>
+							<h3>Verificar OS</h3>							
+						</div>
 					</div>
-				</div>
-				<!-- end portfolio item -->
-				<!-- start portfolio item -->
-				<div class="col-md-4 col-0-gutter">
-					<div class="ot-portfolio-item">
-						<figure class="effect-bubba">
-							<img src="images/demo/portfolio-3.jpg" alt="img02" class="img-responsive" ></img>
-							<figcaption>
-								<h2>Lamp  Velvet</h2>
-								<p>Branding, Web Design</p>
-								<a href="#" data-toggle="modal" data-target="#Modal-3">View more</a>
-							</figcaption>
-						</figure>
+					<!-- end about module -->
+					<!-- about module -->
+					<div class="col-md-3 text-center">
+						<div class="mz-module-about">
+							<i class="fa fa-camera-retro ot-circle"></i>
+							<h3>Exluir</h3>							
+						</div>
 					</div>
-				</div>
-				<!-- end portfolio item -->
-			</div>
-			<div class="row row-0-gutter">
-				<!-- start portfolio item -->
-				<div class="col-md-4 col-0-gutter">
-					<div class="ot-portfolio-item">
-						<figure class="effect-bubba">
-							<img src="images/demo/portfolio-4.jpg" alt="img02" class="img-responsive" ></img>
-							<figcaption>
-								<h2>Smart Name</h2>
-								<p>Branding, Design</p>
-								<a href="#" data-toggle="modal" data-target="#Modal-4">View more</a>
-							</figcaption>
-						</figure>
+					<!-- end about module -->
+					<!-- about module -->
+					<div class="col-md-3 text-center">
+						<div class="mz-module-about">
+							<i class="fa fa-cube ot-circle"></i>
+							<h3>Editar</h3>							
+						</div>
 					</div>
+					<!-- end about module -->
 				</div>
-				<!-- end portfolio item -->
-				<!-- start portfolio item -->
-				<div class="col-md-4 col-0-gutter">
-					<div class="ot-portfolio-item">
-						<figure class="effect-bubba">
-							<img src="images/demo/portfolio-5.jpg" alt="img02" class="img-responsive" ></img>
-							<figcaption>
-								<h2>Fast People</h2>
-								<p>Branding, Web Design</p>
-								<a href="#" data-toggle="modal" data-target="#Modal-5">View more</a>
-							</figcaption>
-						</figure>
-					</div>
-				</div>
-				<!-- end portfolio item -->
-				<!-- start portfolio item -->
-				<div class="col-md-4 col-0-gutter">
-					<div class="ot-portfolio-item">
-						<figure class="effect-bubba">
-							<img src="images/demo/portfolio-6.jpg" alt="img02" class="img-responsive" ></img>
-							<figcaption>
-								<h2>Kites  Stars</h2>
-								<p>Branding, Web Design</p>
-								<a href="#" data-toggle="modal" data-target="#Modal-2">View more</a>
-							</figcaption>
-						</figure>
-					</div>
-				</div>
-				<!-- end portfolio item -->
-			</div>
+			
 			</div><!-- end container -->
 		</section>
-
+		
 		<section class="dark-bg short-section stats-bar">
 			<div class="container text-center">
 				<div class="row">
 					<div class="col-md-3 mb-sm-30">
 						<div class="counter-item">
 							<h2 class="stat-number" data-n="9">0</h2>
-							<h6>awards</h6>
+							<h6>TODAS</h6>
 						</div>
 					</div>
 					<div class="col-md-3 mb-sm-30">
 						<div class="counter-item">
 							<h2 class="stat-number" data-n="167">0</h2>
-							<h6>Clients</h6>
+							<h6>PENDENTES</h6>
 						</div>
 					</div>
 					<div class="col-md-3 mb-sm-30">
 						<div class="counter-item">
 							<h2 class="stat-number" data-n="6">0</h2>
-							<h6>Team</h6>
+							<h6>PRONTAS</h6>
 						</div>
 					</div>
 					<div class="col-md-3 mb-sm-30">
 						<div class="counter-item">
 							<h2 class="stat-number" data-n="34">0</h2>
-							<h6>Project</h6>
+							<h6>CANCELADAS</h6>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-
-		<section>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 text-center">
-						<div class="section-title">
-							<h2>Our Partners</h2>
-							<p>Mida sit una namet, cons uectetur adipiscing adon elit.</p>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-12 text-center">
-						<div class="owl-partners owl-carousel">
-							<div class="item">
-								<div class="partner-logo"><img src="images/demo/partners-1.png" alt="partners"></img></div>
-							</div>
-							<div class="item">
-								<div class="partner-logo"><img src="images/demo/partners-2.png" alt="partners"></img></div>
-							</div>
-							<div class="item">
-								<div class="partner-logo"><img src="images/demo/partners-3.png" alt="partners"></img></div>
-							</div>
-							<div class="item">
-								<div class="partner-logo"><img src="images/demo/partners-4.png" alt="partners"></img></div>
-							</div>
-							<div class="item">
-								<div class="partner-logo"><img src="images/demo/partners-5.png" alt="partners"></img></div>
-							</div>
-							<div class="item">
-								<div class="partner-logo"><img src="images/demo/partners-6.png" alt="partners"></img></div>
-							</div>
-							<div class="item">
-								<div class="partner-logo"><img src="images/demo/partners-7.png" alt="partners"></img></div>
-							</div>
-							<div class="item">
-								<div class="partner-logo"><img src="images/demo/partners-8.png" alt="partners"></img></div>
-							</div>
-							<div class="item">
-								<div class="partner-logo"><img src="images/demo/partners-9.png" alt="partners"></img></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section id="team" class="light-bg">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 text-center">
-						<div class="section-title">
-							<h2>Our Team</h2>
-							<p>A creative agency based on Candy Land, ready to boost your business with some beautifull templates. MOOZ Agency is one of the best in town see more you will be amazed.</p>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<!-- team member item -->
-					<div class="col-md-4">
-						<div class="team-item">
-							<div class="team-image">
-								<img src="images/demo/author-2.jpg" class="img-responsive" alt="author"></img>
-							</div>
-							<div class="team-text">
-								<h3>TOM BEKERS</h3>
-								<div class="team-position">CEO  Web Design</div>
-								<p>Mida sit una namet, cons uectetur adipiscing adon elit. Aliquam vitae barasa droma.</p>
-							</div>
-						</div>
-					</div>
-					<!-- end team member item -->
-					<!-- team member item -->
-					<div class="col-md-4">
-						<div class="team-item">
-							<div class="team-image">
-								<img src="images/demo/author-6.jpg" class="img-responsive" alt="author"></img>
-							</div>
-							<div class="team-text">
-								<h3>LINA GOSATA</h3>
-								<div class="team-position">Photography</div>
-								<p>Worsa dona namet, cons uectetur dipiscing adon elit. Aliquam vitae fringilla unda mir.</p>
-							</div>
-						</div>
-					</div>
-					<!-- end team member item -->
-					<!-- team member item -->
-					<div class="col-md-4">
-						<div class="team-item">
-							<div class="team-image">
-								<img src="images/demo/author-4.jpg" class="img-responsive" alt="author"></img>
-							</div>
-							<div class="team-text">
-								<h3>John BEKERS</h3>
-								<div class="team-position">Marketing</div>
-								<p>Dolor sit don namet, cons uectetur beriscing adon elit. Aliquam vitae fringilla unda.</p>
-							</div>
-						</div>
-					</div>
-					<!-- end team member item -->
-				</div>
-			</div>
-		</section>
+		
+		
 		<section id="contact" class="dark-bg">
 			<div class="container">
 				<div class="row">
@@ -465,7 +322,7 @@
 		</footer>
 
 		<!-- Modal for portfolio item 1 -->
-		<div class="modal fade" id="Modal-novo-cliente" tabindex="-1" role="dialog" aria-labelledby="Modal-label-1">
+		<div class="modal fade" id="Modal-novo-cliente" tabindex="-1" role="dialog" aria-labelledby="Modal-label-1"  data-backdrop="static" data-keyboard="false">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -478,8 +335,8 @@
 								<h:outputLabel for="nome" >* Nome do Cliente:</h:outputLabel>
 								<h:inputText  id="nome" class="form-control input-lg" value="#{clienteController.current.nomeCompleto}"/>
 								<h:outputLabel for="celular">* Celular:</h:outputLabel>
-								<p:inputMask  value="#{clienteController.current.celular}" id="celular" >									
-								</p:inputMask>
+								<h:inputText  value="#{clienteController.current.celular}" class="form-control input-lg" id="celular" >									
+								</h:inputText>
 								<h:outputLabel for="email" >E-mail:</h:outputLabel>
 								<h:inputText id="email"  value="#{clienteController.current.email}" class="form-control input-lg"></h:inputText>								
 								<h:outputLabel for="cidade">Cidade:</h:outputLabel>
@@ -491,10 +348,8 @@
 								<h:outputLabel for="numero">Numero:</h:outputLabel>
 								<h:inputText id="numero" class="form-control input-lg"></h:inputText>
 								<br/>					
-								<f:facet name="footer">
-									<div align="right" >
-										<h:commandButton  value="Salvar" />
-									</div>
+								<f:facet name="footer">									
+										<h:commandButton action="#" class="btn btn-primary btn-lg btn-block" value="Salvar" />								
 								</f:facet>
 							</h:panelGrid>
 						</h:form>						
@@ -502,9 +357,9 @@
 <!-- 						<div class="modal-works"><span>Branding</span><span>Web Design</span></div> -->
 							
 					</div>
-					<div class="modal-footer" align="left">
-						<h:outputLabel style="color:black;font-weight: 3px;">Em breve!<br/>Você poderá comprar créditos Web Sms e informar seus clientes sobre promoções!
-								<br/>Sua empresa inovando a cada dia.</h:outputLabel>
+					<div class="modal-footer">
+<!-- 						<h:outputLabel style="color:black;font-weight: 3px;">Em breve!<br/>Você poderá comprar créditos Web Sms e informar seus clientes sobre promoções! -->
+<!-- 								<br/>Sua empresa inovando a cada dia.</h:outputLabel> -->
 					</div>
 				</div>
 			</div>
@@ -571,7 +426,7 @@
 		</div>
 
 		<!-- Modal for portfolio item 5 -->
-		<div class="modal fade" id="Modal-5" tabindex="-1" role="dialog" aria-labelledby="Modal-label-5">
+		<div class="modal fade" id="Modal-nova-os" tabindex="-1" role="dialog" aria-labelledby="Modal-label-5">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -589,6 +444,8 @@
 				</div>
 			</div>
 		</div>
+		
+		
 
 		<!-- Bootstrap core JavaScript
 			================================================== -->
@@ -602,5 +459,13 @@
 		<script src="../resources/js/SmoothScroll.min.js"></script>
 		<script src="../resources/js/mooz.themes.scripts.js"></script>
 		<script src="../resources/js/config.js"></script>
+		<script>
+			$(document).ready(function(){
+			   alert ("fadad");
+  				$('.date').mask('00/00/0000')
+  			})
+		</script>
+		
+		
 	</body>
 </html>
